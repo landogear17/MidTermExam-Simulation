@@ -34,7 +34,7 @@ namespace MidTermExam_Simulation
             else
             {
                 client.Username = txtBoxUsername.Text;
-                //MessageBox.Show("Creation Complete");
+                MessageBox.Show("Creation Complete");
                 clientList.Add(client);
                 Form form1 = new Form1(clientList);
                 form1.Show();

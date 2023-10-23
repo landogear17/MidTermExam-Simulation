@@ -49,9 +49,9 @@ namespace MidTermExam_Simulation
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Form formCreateAccount = new CreateAccount(clientList);
-            this.Hide();
+            Form formCreateAccount = new CreateAccount(clientList);        
             formCreateAccount.Show();
+            this.Close();
             
             //if (formCreateAccount.IsAccessible)
             //{

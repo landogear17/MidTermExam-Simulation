@@ -14,9 +14,13 @@ namespace MidTermExam_Simulation
         [STAThread]
         static void Main()
         {
+            
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Form form1 = new Form1();
+            form1.Show();
+            Application.Run();
+            //Application.Run(new Form1());
         }
     }
 }
