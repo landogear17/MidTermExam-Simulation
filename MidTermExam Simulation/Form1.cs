@@ -35,7 +35,6 @@ namespace MidTermExam_Simulation
         {
             string username = txtBoxUsername.Text;
             string password = txtBoxPassword.Text;
-            //validMember(username, password);
             
             if (isValidMember(username, password))
                 MessageBox.Show("Accepted");
@@ -49,14 +48,11 @@ namespace MidTermExam_Simulation
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Form formCreateAccount = new CreateAccount(clientList);        
+            Form formCreateAccount = new CreateAccount(clientList,this);        
             formCreateAccount.Show();
             this.Close();
             
-            //if (formCreateAccount.IsAccessible)
-            //{
-            //    this.Close();
-            //}
+            
         }
         
         /*

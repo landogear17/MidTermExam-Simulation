@@ -13,8 +13,9 @@ namespace MidTermExam_Simulation
     public partial class CreateAccount : Form
     {
         public List<Client> clientList = new List<Client>();
-        public CreateAccount(List<Client>clientList)
+        public CreateAccount(List<Client>clientList, Form f1)
         {
+            f1.Close();
             InitializeComponent();
             this.clientList = clientList;
         }
