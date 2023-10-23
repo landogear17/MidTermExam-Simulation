@@ -13,17 +13,22 @@ namespace MidTermExam_Simulation
     public partial class Form1 : Form
     {
         
-        List<Client> clientList = new List<Client>();
+        private List<Client> clientList = new List<Client>();
         DateTime date;
         public Form1()
         {
             InitializeComponent();
-            date = new DateTime(1997, 06, 14);
-            Client client1 = new Client(1, "Anthony", "anthonylf797@gmail.com",date,"landogear", "chacalito");
-            date = new DateTime(1997, 09, 17);
-            Client client2 = new Client(2, "Sergio", "sergio.aqs@gmail.com", date,"zerocomes", "cpp");
+            //date = new DateTime(1997, 06, 14);
+            Client client1 = new Client(1, "Anthony", "anthonylf797@gmail.com","14/06/1997","landogear", "chacalito");
+            //date = new DateTime(1997, 09, 17);
+            Client client2 = new Client(2, "Sergio", "sergio.aqs@gmail.com", "17/09/1997","zerocomes", "cpp");
             clientList.Add(client1);
             clientList.Add(client2);
+        }
+        public Form1(List<Client> clientList)
+        {
+            InitializeComponent();
+            this.clientList = clientList;
         }
 
         private void bttnLogin_Click(object sender, EventArgs e)
@@ -40,17 +45,21 @@ namespace MidTermExam_Simulation
                 txtBoxUsername.Clear();
                 txtBoxPassword.Clear();
             }
-
-
-
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            Form formCreateAccount = new CreateAccount(clientList);
+            this.Hide();
+            formCreateAccount.Show();
+            
+            //if (formCreateAccount.IsAccessible)
+            //{
+            //    this.Close();
+            //}
         }
-
-
+        
+        /*
         private void validMember(string username, string password)
         {
 
@@ -76,6 +85,7 @@ namespace MidTermExam_Simulation
             }
             cont = 0;
         }
+        */
 
         private bool isValidMember(string username, string password)
         {
@@ -84,5 +94,6 @@ namespace MidTermExam_Simulation
                     return true;
             return false;
         }
+
     }
 }
