@@ -14,7 +14,7 @@ namespace MidTermExam_Simulation
     {
         
         private List<Client> clientList = new List<Client>();
-        DateTime date;
+        
         public Form1()
         {
             InitializeComponent();
@@ -50,7 +50,7 @@ namespace MidTermExam_Simulation
         {
             Form formCreateAccount = new CreateAccount(clientList,this);        
             formCreateAccount.Show();
-            this.Close();
+            this.Hide();
             
             
         }

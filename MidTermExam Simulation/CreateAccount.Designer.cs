@@ -40,6 +40,20 @@
             this.txtBoxPassword = new System.Windows.Forms.TextBox();
             this.bttnCreate = new System.Windows.Forms.Button();
             this.bttnBackLogin = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtBoxPostalCode = new System.Windows.Forms.TextBox();
+            this.txtBoxStreetName = new System.Windows.Forms.TextBox();
+            this.txtBoxStreetNumber = new System.Windows.Forms.TextBox();
+            this.checkedListBoxProvince = new System.Windows.Forms.CheckedListBox();
+            this.checkedListBoxCity = new System.Windows.Forms.CheckedListBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -125,9 +139,9 @@
             // 
             // bttnCreate
             // 
-            this.bttnCreate.Location = new System.Drawing.Point(39, 224);
+            this.bttnCreate.Location = new System.Drawing.Point(333, 260);
             this.bttnCreate.Name = "bttnCreate";
-            this.bttnCreate.Size = new System.Drawing.Size(99, 58);
+            this.bttnCreate.Size = new System.Drawing.Size(84, 41);
             this.bttnCreate.TabIndex = 10;
             this.bttnCreate.Text = "Create";
             this.bttnCreate.UseVisualStyleBackColor = true;
@@ -135,18 +149,145 @@
             // 
             // bttnBackLogin
             // 
-            this.bttnBackLogin.Location = new System.Drawing.Point(195, 224);
+            this.bttnBackLogin.Location = new System.Drawing.Point(423, 260);
             this.bttnBackLogin.Name = "bttnBackLogin";
-            this.bttnBackLogin.Size = new System.Drawing.Size(99, 58);
+            this.bttnBackLogin.Size = new System.Drawing.Size(81, 41);
             this.bttnBackLogin.TabIndex = 11;
             this.bttnBackLogin.Text = "Back to the login";
             this.bttnBackLogin.UseVisualStyleBackColor = true;
+            this.bttnBackLogin.Click += new System.EventHandler(this.bttnBackLogin_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(298, 49);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(75, 13);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Street Number";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(14, 59);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(35, 13);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "Street";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(298, 116);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(64, 13);
+            this.label8.TabIndex = 14;
+            this.label8.Text = "Postal Code";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Location = new System.Drawing.Point(25, 23);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(253, 195);
+            this.groupBox1.TabIndex = 15;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Client Information";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.checkedListBoxCity);
+            this.groupBox2.Controls.Add(this.checkedListBoxProvince);
+            this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.txtBoxPostalCode);
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.txtBoxStreetName);
+            this.groupBox2.Controls.Add(this.txtBoxStreetNumber);
+            this.groupBox2.Location = new System.Drawing.Point(284, 23);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(220, 231);
+            this.groupBox2.TabIndex = 16;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Address Information";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(14, 123);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(49, 13);
+            this.label10.TabIndex = 17;
+            this.label10.Text = "Province";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(14, 171);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(24, 13);
+            this.label9.TabIndex = 17;
+            this.label9.Text = "City";
+            // 
+            // txtBoxPostalCode
+            // 
+            this.txtBoxPostalCode.Location = new System.Drawing.Point(111, 90);
+            this.txtBoxPostalCode.Name = "txtBoxPostalCode";
+            this.txtBoxPostalCode.Size = new System.Drawing.Size(103, 20);
+            this.txtBoxPostalCode.TabIndex = 19;
+            // 
+            // txtBoxStreetName
+            // 
+            this.txtBoxStreetName.Location = new System.Drawing.Point(68, 56);
+            this.txtBoxStreetName.Name = "txtBoxStreetName";
+            this.txtBoxStreetName.Size = new System.Drawing.Size(146, 20);
+            this.txtBoxStreetName.TabIndex = 18;
+            // 
+            // txtBoxStreetNumber
+            // 
+            this.txtBoxStreetNumber.Location = new System.Drawing.Point(111, 23);
+            this.txtBoxStreetNumber.Name = "txtBoxStreetNumber";
+            this.txtBoxStreetNumber.Size = new System.Drawing.Size(103, 20);
+            this.txtBoxStreetNumber.TabIndex = 17;
+            // 
+            // checkedListBoxProvince
+            // 
+            this.checkedListBoxProvince.FormattingEnabled = true;
+            this.checkedListBoxProvince.Items.AddRange(new object[] {
+            "Quebec",
+            "Ontario",
+            "Alberta"});
+            this.checkedListBoxProvince.Location = new System.Drawing.Point(94, 116);
+            this.checkedListBoxProvince.Name = "checkedListBoxProvince";
+            this.checkedListBoxProvince.Size = new System.Drawing.Size(120, 49);
+            this.checkedListBoxProvince.TabIndex = 22;
+            this.checkedListBoxProvince.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkedListBoxProvince_ItemCheck);
+            // 
+            // checkedListBoxCity
+            // 
+            this.checkedListBoxCity.FormattingEnabled = true;
+            this.checkedListBoxCity.Location = new System.Drawing.Point(94, 171);
+            this.checkedListBoxCity.Name = "checkedListBoxCity";
+            this.checkedListBoxCity.Size = new System.Drawing.Size(120, 49);
+            this.checkedListBoxCity.TabIndex = 23;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(212, 269);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 24;
+            this.button1.Text = "Reset";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // CreateAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(339, 319);
+            this.ClientSize = new System.Drawing.Size(516, 304);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.bttnBackLogin);
             this.Controls.Add(this.bttnCreate);
             this.Controls.Add(this.txtBoxPassword);
@@ -159,8 +300,12 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBox2);
             this.Name = "CreateAccount";
             this.Text = "CreateAccount";
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -180,5 +325,18 @@
         private System.Windows.Forms.TextBox txtBoxPassword;
         private System.Windows.Forms.Button bttnCreate;
         private System.Windows.Forms.Button bttnBackLogin;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.TextBox txtBoxPostalCode;
+        private System.Windows.Forms.TextBox txtBoxStreetName;
+        private System.Windows.Forms.TextBox txtBoxStreetNumber;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.CheckedListBox checkedListBoxCity;
+        private System.Windows.Forms.CheckedListBox checkedListBoxProvince;
+        private System.Windows.Forms.Button button1;
     }
 }

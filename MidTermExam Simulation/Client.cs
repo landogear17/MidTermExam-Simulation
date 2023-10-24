@@ -14,7 +14,7 @@ namespace MidTermExam_Simulation
         private string birthdate;
         private string username;
         private string password;
-
+        private Address address;
         public Client()
         {
         }
@@ -35,5 +35,6 @@ namespace MidTermExam_Simulation
         public string Birthdate { get => birthdate; set => birthdate = value; }
         public string Password { get => password; set => password = value; }
         public string Username { get => username; set => username = value; }
+        public Address Address { get => address; set => address = value; }
     }
 }
