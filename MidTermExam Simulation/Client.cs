@@ -12,7 +12,7 @@ namespace MidTermExam_Simulation
         private double id;
         private string name;
         private string email;
-        private string birthdate;
+        private DateTime birthdate;
         private string username;
         private string password;
         private Address address;
@@ -21,7 +21,7 @@ namespace MidTermExam_Simulation
             flag = false;
         }
 
-        public Client(double id, string name, string email, string birthdate, string username, string password)
+        public Client(double id, string name, string email, DateTime birthdate, string username, string password)
         {
             flag = false;
             this.id = id;
@@ -35,7 +35,7 @@ namespace MidTermExam_Simulation
         public double Id { get => id; set => id = value; }
         public string Name { get => name; set => name = value; }
         public string Email { get => email; set => email = value; }
-        public string Birthdate { get => birthdate; set => birthdate = value; }
+        public DateTime Birthdate { get => birthdate; set => birthdate = value; }
         public string Password { get => password; set => password = value; }
         public string Username { get => username; set => username = value; }
         public Address Address { get => address; set => address = value; }

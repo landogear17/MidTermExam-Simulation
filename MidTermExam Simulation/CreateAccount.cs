@@ -24,18 +24,17 @@ namespace MidTermExam_Simulation
             //f1.Close();
             InitializeComponent();
             this.clientList = clientList;
-            
         }
 
         private void bttnCreate_Click(object sender, EventArgs e)
         {
             Client client = new Client();
 
-            if (txtBoxName.Text != "" && txtBoxEmail.Text != "" && txtBoxBirthdate.Text != "" && txtBoxUsername.Text != "" && txtBoxPassword.Text != "" && txtBoxStreetNumber.Text != "" && txtBoxStreetName.Text != "" && txtBoxPostalCode.Text != "")
+            if (txtBoxName.Text != "" && txtBoxEmail.Text != "" && txtBoxUsername.Text != "" && txtBoxPassword.Text != "" && txtBoxStreetNumber.Text != "" && txtBoxStreetName.Text != "" && txtBoxPostalCode.Text != "")
             {
-                
+
                 client.Name = txtBoxName.Text;
-                client.Birthdate = txtBoxBirthdate.Text;
+                
                 client.Email = txtBoxEmail.Text;
                 client.Password = txtBoxPassword.Text;
                 Address ad = new Address();
@@ -45,8 +44,9 @@ namespace MidTermExam_Simulation
                 ad.Province = checkedListBoxProvince.Text;
 
 
-                if (!isUsernameExist(txtBoxUsername.Text) && int.TryParse(txtBoxStreetNumber.Text, out _))
+                if (!isUsernameExist(txtBoxUsername.Text) && int.TryParse(txtBoxStreetNumber.Text, out _) && DateTime.TryParse(dateTimePickerBirthdate.Text, out _))
                 {
+                    client.Birthdate = DateTime.Parse(dateTimePickerBirthdate.Text);
                     ad.StreetNumber = Convert.ToInt32(txtBoxStreetNumber.Text);
                     client.Address = ad;
                     client.Username = txtBoxUsername.Text;
@@ -58,6 +58,7 @@ namespace MidTermExam_Simulation
                 }
                 else
                 {
+                    
                     if (!isUsernameExist(txtBoxUsername.Text) && !(int.TryParse(txtBoxStreetNumber.Text, out _)))
                     {
                         MessageBox.Show("Wrong input in street number field, please try again");

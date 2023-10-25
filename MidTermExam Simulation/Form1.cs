@@ -19,9 +19,9 @@ namespace MidTermExam_Simulation
         {
             InitializeComponent();
             //date = new DateTime(1997, 06, 14);
-            Client client1 = new Client(1, "Anthony", "anthonylf797@gmail.com","14/06/1997","landogear", "chacalito");
+            Client client1 = new Client(1, "Anthony", "anthonylf797@gmail.com",DateTime.Parse("06/14/1997"),"landogear", "chacalito");
             //date = new DateTime(1997, 09, 17);
-            Client client2 = new Client(2, "Sergio", "sergio.aqs@gmail.com", "17/09/1997","zerocomes", "cpp");
+            Client client2 = new Client(2, "Sergio", "sergio.aqs@gmail.com", DateTime.Parse("06/14/1997"),"zerocomes", "cpp");
             clientList.Add(client1);
             clientList.Add(client2);
         }
@@ -37,7 +37,18 @@ namespace MidTermExam_Simulation
             string password = txtBoxPassword.Text;
             
             if (isValidMember(username, password))
-                MessageBox.Show("Accepted");
+            {
+                foreach (Client currentUser in clientList)
+                {
+                    if (username == currentUser.Username)
+                    {
+                        currentUser.Flag = true;
+                    }
+                }
+                Form orderBook = new OrderBook(clientList);
+                orderBook.Show();
+                this.Hide();
+            }
             else
             {
                 MessageBox.Show("Wrong Credentials");

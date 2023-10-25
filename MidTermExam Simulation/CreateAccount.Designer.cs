@@ -34,7 +34,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtBoxName = new System.Windows.Forms.TextBox();
-            this.txtBoxBirthdate = new System.Windows.Forms.TextBox();
             this.txtBoxEmail = new System.Windows.Forms.TextBox();
             this.txtBoxUsername = new System.Windows.Forms.TextBox();
             this.txtBoxPassword = new System.Windows.Forms.TextBox();
@@ -53,6 +52,8 @@
             this.checkedListBoxProvince = new System.Windows.Forms.CheckedListBox();
             this.checkedListBoxCity = new System.Windows.Forms.CheckedListBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.dateTimePickerBirthdate = new System.Windows.Forms.DateTimePicker();
+            this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -107,13 +108,6 @@
             this.txtBoxName.Name = "txtBoxName";
             this.txtBoxName.Size = new System.Drawing.Size(140, 20);
             this.txtBoxName.TabIndex = 5;
-            // 
-            // txtBoxBirthdate
-            // 
-            this.txtBoxBirthdate.Location = new System.Drawing.Point(105, 68);
-            this.txtBoxBirthdate.Name = "txtBoxBirthdate";
-            this.txtBoxBirthdate.Size = new System.Drawing.Size(140, 20);
-            this.txtBoxBirthdate.TabIndex = 6;
             // 
             // txtBoxEmail
             // 
@@ -186,6 +180,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.dateTimePickerBirthdate);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(253, 195);
@@ -280,6 +275,13 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // dateTimePickerBirthdate
+            // 
+            this.dateTimePickerBirthdate.Location = new System.Drawing.Point(93, 56);
+            this.dateTimePickerBirthdate.Name = "dateTimePickerBirthdate";
+            this.dateTimePickerBirthdate.Size = new System.Drawing.Size(140, 20);
+            this.dateTimePickerBirthdate.TabIndex = 25;
+            // 
             // CreateAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -293,7 +295,6 @@
             this.Controls.Add(this.txtBoxPassword);
             this.Controls.Add(this.txtBoxUsername);
             this.Controls.Add(this.txtBoxEmail);
-            this.Controls.Add(this.txtBoxBirthdate);
             this.Controls.Add(this.txtBoxName);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -304,6 +305,7 @@
             this.Controls.Add(this.groupBox2);
             this.Name = "CreateAccount";
             this.Text = "CreateAccount";
+            this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
@@ -319,7 +321,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtBoxName;
-        private System.Windows.Forms.TextBox txtBoxBirthdate;
         private System.Windows.Forms.TextBox txtBoxEmail;
         private System.Windows.Forms.TextBox txtBoxUsername;
         private System.Windows.Forms.TextBox txtBoxPassword;
@@ -338,5 +339,6 @@
         private System.Windows.Forms.CheckedListBox checkedListBoxCity;
         private System.Windows.Forms.CheckedListBox checkedListBoxProvince;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DateTimePicker dateTimePickerBirthdate;
     }
 }
