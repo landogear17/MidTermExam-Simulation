@@ -75,12 +75,15 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="OnlineOrder.cs" />
+    <Compile Include="Order.cs" />
     <Compile Include="OrderBook.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="OrderBook.Designer.cs">
       <DependentUpon>OrderBook.cs</DependentUpon>
     </Compile>
+    <Compile Include="PickupOrder.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CreateAccount.resx">
