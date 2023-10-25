@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MidTermExam_Simulation
 {
-    internal class Order
+    public class Order
     {
     }
 }
