@@ -8,6 +8,7 @@ namespace MidTermExam_Simulation
 {
     public class Client
     {
+        private bool flag; // To identified the current user connected.
         private double id;
         private string name;
         private string email;
@@ -17,10 +18,12 @@ namespace MidTermExam_Simulation
         private Address address;
         public Client()
         {
+            flag = false;
         }
 
         public Client(double id, string name, string email, string birthdate, string username, string password)
         {
+            flag = false;
             this.id = id;
             this.name = name;
             this.email = email;
@@ -36,5 +39,11 @@ namespace MidTermExam_Simulation
         public string Password { get => password; set => password = value; }
         public string Username { get => username; set => username = value; }
         public Address Address { get => address; set => address = value; }
+        public bool Flag { get => flag; set => flag = value; }
+
+        public override string ToString()
+        {
+            return base.ToString();
+        }
     }
 }

@@ -21,7 +21,7 @@ namespace MidTermExam_Simulation
 
         public CreateAccount(List<Client>clientList, Form f1)
         {
-            f1.Close();
+            //f1.Close();
             InitializeComponent();
             this.clientList = clientList;
             
@@ -44,20 +44,11 @@ namespace MidTermExam_Simulation
                 ad.City = checkedListBoxCity.Text;
                 ad.Province = checkedListBoxProvince.Text;
 
-                if (txtBoxStreetNumber.Text != "")
-                   ad.StreetNumber = Convert.ToInt32(txtBoxStreetNumber.Text);
-                else
-                    MessageBox.Show("Write a valid Text");
-                client.Address = ad;
 
-
-                if (isUsernameExist(txtBoxUsername.Text))
+                if (!isUsernameExist(txtBoxUsername.Text) && int.TryParse(txtBoxStreetNumber.Text, out _))
                 {
-                    MessageBox.Show("The Username is already used");
-                    txtBoxUsername.Clear();
-                }
-                else
-                {
+                    ad.StreetNumber = Convert.ToInt32(txtBoxStreetNumber.Text);
+                    client.Address = ad;
                     client.Username = txtBoxUsername.Text;
                     MessageBox.Show("Creation Complete");
                     clientList.Add(client);
@@ -65,9 +56,28 @@ namespace MidTermExam_Simulation
                     form1.Show();
                     this.Close();
                 }
+                else
+                {
+                    if (!isUsernameExist(txtBoxUsername.Text) && !(int.TryParse(txtBoxStreetNumber.Text, out _)))
+                    {
+                        MessageBox.Show("Wrong input in street number field, please try again");
+                        txtBoxStreetNumber.Clear();
+                    }
+                    if (isUsernameExist(txtBoxUsername.Text) && int.TryParse(txtBoxStreetNumber.Text, out _))
+                    {
+                        MessageBox.Show("Username is already used");
+                        txtBoxUsername.Clear();
+                    }
+                    if (isUsernameExist(txtBoxUsername.Text) && !(int.TryParse(txtBoxStreetNumber.Text, out _)))
+                    {
+                        MessageBox.Show("Username already used and wrong input in street number field");
+                        txtBoxUsername.Clear();
+                        txtBoxStreetNumber.Clear();
+                    }
+                }
             }
             else
-                MessageBox.Show("There are empty fields");
+                MessageBox.Show("There are empty fields to complete");
         }
 
         private double getNextId()
@@ -96,9 +106,7 @@ namespace MidTermExam_Simulation
             switch (checkedListBoxProvince.SelectedIndex)
             {
                 case 0:
-
                     provinceList = quebecCities;
-                    
                     break;
                 case 1:
                     //checkedListBoxCity.Items.Clear();

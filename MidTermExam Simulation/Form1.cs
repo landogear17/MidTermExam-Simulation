@@ -51,8 +51,6 @@ namespace MidTermExam_Simulation
             Form formCreateAccount = new CreateAccount(clientList,this);        
             formCreateAccount.Show();
             this.Hide();
-            
-            
         }
         
         /*

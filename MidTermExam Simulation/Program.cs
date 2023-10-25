@@ -17,10 +17,10 @@ namespace MidTermExam_Simulation
             
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Form form1 = new Form1();
-            form1.Show();
-            Application.Run();
-            //Application.Run(new Form1());
+            //Form form1 = new Form1();
+            //form1.Show();
+            //Application.Run();
+            Application.Run(new Form1());
         }
     }
 }
